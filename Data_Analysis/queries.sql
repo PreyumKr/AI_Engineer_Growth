@@ -71,6 +71,50 @@
 -- select firstname || ' ' || lastname as fullname
 -- from public.employeedemographics
 
+-- select firstname, count(gender) over (partition by gender)
+-- from public.employeedemographics
+
+-- Common Table Expressions
+-- with cte_employee as (
+-- 	select * from public.employeedemographics
+-- )
+-- select firstname from cte_employee
+
+-- Temp Tables
+-- create temp table temp_employee (
+-- 	employeeid int,
+-- 	jobtitle varchar(100),
+-- 	salary int
+-- )
+
+-- select * from temp_employee
+
+-- insert into temp_employee values(
+-- '1001', 'HR', '45000'
+-- )
+
+-- insert into temp_employee (select * from public.employeesalary)
+
+-- select Trim(firstname), ltrim(firstname), rtrim(firstname)
+-- from public.employeedemographics
+
+-- select firstname, replace(firstname, 'Jim', 'Nub') from public.employeedemographics
+
+-- select firstname, lower(firstname), upper(firstname) from public.employeedemographics
+
+-- Stored Procedures
+-- create procedure test2()
+-- language plpgsql
+-- as $$
+-- BEGIN
+-- 	select * from public.employeedemographics;
+-- END
+-- $$
+
+-- call test2();
+
+
+
 
 
 
